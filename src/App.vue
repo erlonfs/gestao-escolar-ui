@@ -1,19 +1,22 @@
 <template>
   <div id="app">
     <HeaderBar />
-    <CadastroPessoaFisica />
+    <div id="body-content">
+      <LocalBar />
+      <router-view />
+    </div>
   </div>
 </template>
 
 <script>
 import HeaderBar from "./components/HeaderBar.vue";
-import CadastroPessoaFisica from "./components/CadastroPessoaFisica.vue";
+import LocalBar from "./components/LocalBar.vue";
 
 export default {
   name: "App",
   components: {
     HeaderBar,
-    CadastroPessoaFisica
+    LocalBar
   }
 };
 </script>
@@ -24,6 +27,10 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  max-width: 800px;
+  margin: 0 auto;
+}
+
+#body-content {
+  margin: 0 30px;
 }
 </style>

@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h4>Cadastro de pessoa física</h4>
-
+    <vs-crumbs></vs-crumbs>
     <b-form @submit="onSubmit" @reset="onReset" v-if="show">
       <b-form-group id="input-nome" label="Nome:" label-for="input-nome">
         <b-form-input id="input-nome" v-model="form.nome" required placeholder="Nome completo"></b-form-input>
@@ -12,7 +11,7 @@
       </b-form-group>
 
       <b-form-group id="input-nome-social" label="Nome social:" label-for="input-nome-social">
-        <b-form-input id="input-nome-social" v-model="form.cpf" required placeholder="Nome social"></b-form-input>
+        <b-form-input id="input-nome-social" v-model="form.nomeSocial" required placeholder="Nome social"></b-form-input>
       </b-form-group>
 
       <b-form-group id="input-group-sexo" label="Sexo:" label-for="input-sexo">
@@ -31,6 +30,10 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 
 export default {
   name: "CadastroPessoaFisica",
+  components: {
+    
+  },
+
   data() {
     return {
       form: {
