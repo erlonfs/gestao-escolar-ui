@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { PessoaFisicaService } from '../services/pessoa-fisica-service.js'
-import { ADD_PESSOA_FISICA, UPDATE_PESSOA_FISICA } from './mutations.js'
+import { ADD_PESSOA_FISICA, UPDATE_PESSOA_FISICA, GET_PESSOA_FISICA } from './mutations.js'
 
 Vue.use(Vuex);
 
@@ -18,7 +18,7 @@ const mutations = {
     state.pessoasFisicas.splice(index, 1, pessoaFisica);
     state.pessoasFisicas = [...state.pessoasFisicas];
   },
-  ["getPessoasFisicas"](state, pessoasFisicas) {
+  [GET_PESSOA_FISICA](state, pessoasFisicas) {
     state.pessoasFisicas = pessoasFisicas;
   }
 };
@@ -30,7 +30,7 @@ const actions = {
   },
   async getPessoasFisicasAction({ commit }) {
     const result = await PessoaFisicaService.getPessoasFisicas();
-    commit("getPessoasFisicas", result);
+    commit(GET_PESSOA_FISICA, result);
   },
   async updatePessoaFisicaAction({ commit }, pessoaFisica) {
     const updated = await PessoaFisicaService.updatePessoasFisica(pessoaFisica);

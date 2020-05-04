@@ -3,21 +3,15 @@ import { API } from './config';
 
 const getPessoasFisicas = async function () {
   try {
-    const response = await axios.get(`${API}/pessoas-fisicas`);
+    const response = await axios.get(`http://localhost:8888/pessoasFisicas`);
 
     let data = parseList(response);
 
-    let result = data.map(h => {
+    const result = data.map(h => {
       return h;
     });
 
-    result = {
-      A: "teste"
-    }
-
     return result;
-
-
 
   } catch (error) {
     console.error(error);
@@ -28,12 +22,15 @@ const getPessoasFisicas = async function () {
 const getPessoasFisica = async function (id) {
   try {
 
-    const response = await axios.get(`${API}/pessoas-fisicas/${id}`);
-    let result = parseItem(response, 200);
+    const response = await axios.get(`${API}/pessoasFisicas/${id}`);
+    let data = parseList(response);
+
+    const result = data.map(h => {
+      return h;
+    });
 
     return result;
 
-    
   } catch (error) {
     console.error(error);
     return null;
@@ -42,7 +39,7 @@ const getPessoasFisica = async function (id) {
 
 const updatePessoasFisica = async function (pessoaFisica) {
   try {
-    const response = await axios.put(`${API}/pessoas-fisicas/${pessoaFisica.id}`, pessoaFisica);
+    const response = await axios.put(`${API}/pessoasFisicas/${pessoaFisica.id}`, pessoaFisica);
     const updated = parseItem(response, 200);
     return updated;
   } catch (error) {
@@ -53,7 +50,7 @@ const updatePessoasFisica = async function (pessoaFisica) {
 
 const addPessoasFisica = async function (pessoaFisica) {
   try {
-    const response = await axios.post(`${API}/pessoas-fisicas`, pessoaFisica);
+    const response = await axios.post(`${API}/pessoasFisicas`, pessoaFisica);
     const addedPessoaFisica = parseItem(response, 201);
     return addedPessoaFisica;
   } catch (error) {
@@ -63,14 +60,13 @@ const addPessoasFisica = async function (pessoaFisica) {
 };
 
 const parseList = response => {
-  //if (response.status !== 200) throw Error(response.message);
-  // if (!response.data) return [];
-  // let list = response.data;
-  // if (typeof list !== 'object') {
-  //   list = [];
-  // }
-
-  return { "Nome": "Erlon", "id" : 10, "response" : response }
+  if (response.status !== 200) throw Error(response.message);
+  if (!response.data) return [];
+  let list = response.data;
+  if (typeof list !== 'object') {
+    list = [];
+  }
+  return list;
 };
 
 export const parseItem = (response, code) => {
