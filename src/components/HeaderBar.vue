@@ -7,10 +7,10 @@
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item href="#">Pessoas Físicas</b-nav-item>
-          <b-nav-item href="#">Escolas</b-nav-item>
-          <b-nav-item href="#">Alunos</b-nav-item>
-          <b-nav-item href="#">Matriculas</b-nav-item>
+          <b-nav-item href="#/pessoas-fisicas">Pessoas Físicas</b-nav-item>
+          <b-nav-item href="#/escolas">Escolas</b-nav-item>
+          <b-nav-item href="#/alunos">Alunos</b-nav-item>
+          <b-nav-item href="#/matriculas">Matriculas</b-nav-item>
         </b-navbar-nav>
 
         <b-navbar-nav class="ml-auto">

@@ -10,11 +10,12 @@ export default {
       items: [
         {
           text: "Pessoas físicas",
-          href: "#"
+          href: "#/pessoas-fisicas",
+          active: true
         },
         {
           text: "Cadastro",
-          active: true
+          href: "#/pessoas-fisicas/cadastro"
         }
       ]
     };

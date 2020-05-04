@@ -17,6 +17,12 @@ export default new Router({
             component: () =>
                 import('./views/pessoas-fisicas.vue'),
         },
+        {
+            path: '/pessoas-fisicas/cadastro',
+            name: 'pessoas-fisicas-cadastro',
+            component: () =>
+                import('./views/pessoas-fisicas-cadastro.vue'),
+        },
 
         {
             path: '*',
