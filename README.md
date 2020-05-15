@@ -1,4 +1,4 @@
-# gestao-escolar
+# gestao-escolar-ui
 
 ## Project setup
 ```
