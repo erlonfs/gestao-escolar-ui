@@ -10,7 +10,7 @@
     "dev": "concurrently \"npm run backend\" \"npm run serve\""
   },
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "bootstrap": "^4.4.1",
     "bootstrap-vue": "^2.13.0",
     "core-js": "^3.6.4",
